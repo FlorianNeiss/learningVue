@@ -1,0 +1,17 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="main.js"></script>
+
+<div id="app">
+  <p>{{ message }}</p>
+  <div v-if="hasMessage">
+    Test
+  </div>
+  <ol>
+    <li v-for="person in persons">{{person.name}} {{person.lastName}}</li>
+    <todo-item v-for="person in persons" v-bind:todo="person" v-bind:key="person.age"></todo-item>
+  </ol>
+  <button v-on:click="reverseMessage">
+  Reverse the text
+  </button>
+  <input v-model="message">
+</div>
